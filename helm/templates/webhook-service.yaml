@@ -8,9 +8,11 @@ metadata:
     io.kompose.service: webhook-site
   name: webhook-site
 spec:
+  type: NodePort
   ports:
     - name: "webhook-site"
       port: 80
       targetPort: 80
+      nodePort: 30080
   selector:
     io.kompose.service: webhook-site

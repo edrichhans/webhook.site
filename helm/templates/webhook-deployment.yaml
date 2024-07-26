@@ -46,11 +46,15 @@ spec:
               value: sqlite
             - name: ECHO_HOST_MODE
               value: path
+            - name: LARAVEL_ECHO_SERVER_HOST
+              value: http://127.0.0.1:6001
             - name: QUEUE_DRIVER
               value: redis
             - name: REDIS_HOST
               value: 127.0.0.1
-          image: webhooksite/webhook.site
+          # This uses a local image
+          image: webhook-site-xendit
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
               protocol: TCP
