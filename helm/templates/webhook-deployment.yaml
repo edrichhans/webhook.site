@@ -52,10 +52,9 @@ spec:
               value: redis
             - name: REDIS_HOST
               value: 127.0.0.1
-          # This uses a local image
-          image: webhook.site-xendit
-          # Can remove this when pulling from cloud repository
-          imagePullPolicy: IfNotPresent
+          # This uses edrichhans/webhook.site-xendit image, which is a fork of webhook.site to support kubernetes
+          # A PR has been created in the original repo https://github.com/webhooksite/webhook.site/pull/163/files
+          image: edrichhans/webhook.site-xendit
           ports:
             - containerPort: 80
               protocol: TCP
